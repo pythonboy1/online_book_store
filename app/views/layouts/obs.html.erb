@@ -1,0 +1,159 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>O. B. S. | Home</title>
+  <%= stylesheet_link_tag  'bootstrap', media: "all" %>
+  <%= stylesheet_link_tag  'style', media: "all" %>
+  <%= stylesheet_link_tag  'fwslider', media: "all" %>
+  <%= stylesheet_link_tag  'http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800', type: "text/css" , rel: "stylesheet" %>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+  <%= javascript_include_tag 'jquery.min', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'jquery-ui.min', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'fwslider', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'style', 'data-turbolinks-track' => true %>
+  <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+  <!--<script src="js/jquery.easydropdown.js"></script>-->
+  <!--start slider -->
+
+</head>
+<body>
+<div class="header">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="header-left">
+          <div class="logo">
+            <a href="index.html"><%= image_tag 'logo1.png', alt: "logo1" , name: "OBS" %></a>
+            <h1 class="toggleHeaderL">Online Book Store</h1>
+          </div>
+          <div class="menu">
+            <a class="toggleMenu" href="#"><%= image_tag 'nav.png', alt: "navi" %></a>
+            <ul class="nav" id="nav">
+              <li><a href="shop.html">Shop</a></li>
+              <li><a href="team.html">Books</a></li>
+              <li><a href="experiance.html">Events</a></li>
+              <li><a href="experiance.html">New Releases</a></li>
+              <li><a href="shop.html">Publishers</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+              <div class="clear"></div>
+            </ul>
+            <%= javascript_include_tag 'responsive-nav', 'data-turbolinks-track' => true %>
+          </div>
+          <div class="clear"></div>
+        </div>
+        <div class="header_right">
+          <!-- start search-->
+          <div class="search-box">
+            <div id="sb-search" class="sb-search">
+              <form>
+                <input class="sb-search-input" placeholder="Enter your search term..." type="search" name="search" id="search">
+                <input class="sb-search-submit" type="submit" value="">
+                <span class="sb-icon-search"> </span>
+              </form>
+            </div>
+          </div>
+          <!----search-scripts---->
+          <%= javascript_include_tag 'classie' %>
+          <%= javascript_include_tag 'uisearch' %>
+          <script>
+            new UISearch( document.getElementById( 'sb-search' ) );
+          </script>
+          <!----//search-scripts---->
+          <ul class="icon1 sub-icon1 profile_img">
+            <li><a class="active-icon c1" href="#"> </a>
+              <ul class="sub-icon1 list">
+                <div class="product_control_buttons">
+                  <a href="#"><%= image_tag "edit.png", alt: "" %></a>
+                  <a href="#"><%= image_tag "close_edit.png" , alt: "" %></a>
+                </div>
+                <div class="clear"></div>
+                <li class="list_img"><%= image_tag "1.jpg", alt: "" %></li>
+                <li class="list_desc"><h4><a href="#">Welcome <%= session[:username] %></a></h4><span class="actual">** Free **
+                          </span></li>
+                <div class="login_buttons">
+                  <div class="check_button"><a href="checkout.html">Check out</a></div>
+                  <% if session[:username] == nil %>
+                      <div class="login_button"><%= link_to("Login", {:controller => 'demo', :action => 'login'}) %></div>
+                  <% else %>
+                      <div class="login_button"><a href="login.html">Logout</a></div>
+                  <% end %>
+                  <div class="clear"></div>
+                </div>
+                <div class="clear"></div>
+              </ul>
+            </li>
+          </ul>
+          <div class="clear"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<%= yield %>
+
+
+
+<div class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <ul class="footer_box">
+          <h4>Products</h4>
+          <li><a href="#">Programming Books</a></li>
+          <li><a href="#">Certifications Books</a></li>
+          <li><a href="#">Security Books</a></li>
+          <li><a href="#">Electronics Books</a></li>
+
+        </ul>
+      </div>
+      <div class="col-md-3">
+        <ul class="footer_box">
+          <h4>About Me</h4>
+          <li><%= link_to 'My Skills' , {:controller => 'info',:action => 'skill'} %></li>
+          <li><a href="#">My Developer Buddies</a></li>
+          <li><%= link_to 'My Resume -- Download' , {:controller => 'info',:action => 'downloadResume'} %></li>
+          <li><%= link_to 'Source Code -- Download' , {:controller => 'info',:action => 'sourcecode'} %></li>
+        </ul>
+      </div>
+      <div class="col-md-3">
+        <ul class="footer_box">
+          <h4>Your Support</h4>
+          <li><a href="#">Feedback</a></li>
+          <li><a href="#">Bugs / Errors</a></li>
+          <li><a href="#">Changes</a></li>
+          <li><a href="#">Licences</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3">
+        <ul class="footer_box">
+          <h4>Newsletter</h4>
+          <div class="footer_search">
+            <form>
+              <input type="text" value="Enter your email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter your email';}">
+              <input type="submit" value="Go">
+            </form>
+          </div>
+          <ul class="social">
+            <li class="facebook"><a href="#"><span> </span></a></li>
+            <li class="twitter"><a href="#"><span> </span></a></li>
+            <li class="instagram"><a href="#"><span> </span></a></li>
+            <li class="pinterest"><a href="#"><span> </span></a></li>
+            <li class="youtube"><a href="#"><span> </span></a></li>
+          </ul>
+
+        </ul>
+      </div>
+    </div>
+    <div class="row footer_bottom">
+      <div class="copy">
+        <p>© 2016 Online Store by Shubham Heda</p>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

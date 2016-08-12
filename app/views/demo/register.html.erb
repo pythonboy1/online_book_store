@@ -1,0 +1,16 @@
+
+<div class="main">
+  <div class="shop_top">
+    <div class="container">
+
+      <%= form_for(:user, :url => {:action => 'create',:comp_id => @comp_id}) do |f| %>
+
+          <%= render(:partial => 'form', :locals => {:f => f}) %>
+
+              <%= submit_tag("Submit",:class => "btn btn-default") %>
+          </div>
+
+      <% end %>
+
+    </div>
+  </div>

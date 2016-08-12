@@ -1,0 +1,42 @@
+<div class="main">
+  <div class="shop_top">
+    <div class="container">
+      <div class="col-md-6">
+        <div class="login-page">
+          <h4 class="title">New Customers</h4>
+          <p>Welcome New Customers by creating a new account you agree and accept the license agreement.
+            OBS (Online Book Store) Agreement states that you are accepting for booking or purchasing the product from Our Little Store.
+            You also agree upon that after giving the Product there is no returning back the product.
+            Have a nice Day ...</p><br>
+          <p class="tab">-- <strong><i>Shubham Heda</i></strong></p>
+          <div class="button1">
+            <a href="register.html"><input type="submit" name="Submit" value="Create an Account"></a>
+          </div>
+          <div class="clear"></div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="login-title">
+          <h4 class="title">Registered Customers</h4>
+          <div id="loginbox" class="loginbox">
+            <%= form_for(:user, :url => {:action => "access"}, :id => "login-form") do |f| %>
+<!--            <form action="" method="post" name="login" id="login-form">-->
+                <fieldset class="input">
+                <%= render(:partial => "loginform", :locals => {:f => f}) %>
+                  <div class="remember">
+                    <p id="login-form-remember">
+                      <label for="modlgn_remember"><a href="#">Forget Your Password ? </a></label>
+                    </p>
+                    <%= submit_tag("Login", :class => "button", :id => "butclick") %>
+                    <div class="clear"></div>
+                  </div>
+                </fieldset>
+            <!--</form>-->
+            <% end %>
+          </div>
+        </div>
+        <div class="clear"></div>
+      </div>
+    </div>
+  </div>
+</div>

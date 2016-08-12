@@ -1,0 +1,16 @@
+<%	if @error %>
+    <div class="alert alert-warning alert-dismissible" role="alert" id="loginwar">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close" id="onwar"><span aria-hidden="true">&times;</span></button>
+      <strong>Warning!</strong> Incorrect Username / Password
+    </div>
+
+ <% end %>
+ <p id="login-form-username">
+    <label for="modlgn_username">Email</label>
+   <%= f.text_field(:email_id, :size => "18", :id => "modlgn_username" ,:class => "inputbox", :placeholder => "Enter Email") %>
+  </p>
+  <p id="login-form-password">
+    <label for="modlgn_passwd">Password</label>
+    <%= f.text_field(:password, :size => "18", :id => "modlgn_passwd", :class => "inputbox", :placeholder => "Enter Password",
+                     :type => "password") %>
+  </p>
