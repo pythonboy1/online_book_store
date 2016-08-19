@@ -10,15 +10,17 @@ class DemoController < ApplicationController
   end
 
   def register
-    lastval = User.last
-    @comp_id = lastval.comp_id
-    @comp_id  = @comp_id.succ
-    @register = User.new
+
   end
   def create
     lastval = User.last
-    @comp_id = lastval.comp_id
-    @comp_id  = @comp_id.succ
+    if lastval
+      @comp_id = lastval.comp_id
+      @comp_id = @comp_id.succ
+    else
+      @comp_id = "OBS0001"
+    end
+
     @register = User.new(user_params)
     if @register.new_record?
       @register.update_attribute(:comp_id,@comp_id)
@@ -26,8 +28,7 @@ class DemoController < ApplicationController
       print false
     end
     if @register.save
-      redirect_to(:action => 'index')
-
+      redirect_to(:action => 'index',:username => @register.first_name)
     else
       render('login')
     end
