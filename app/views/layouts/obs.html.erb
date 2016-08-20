@@ -31,7 +31,7 @@
           <div class="menu">
             <a class="toggleMenu" href="#"><%= image_tag 'nav.png', alt: "navi" %></a>
             <ul class="nav" id="nav">
-              <li><a href="shop.html">Shop</a></li>
+              <li><%= link_to("Shop", {:controller => 'demo', :action => 'shop'}) %></li>
               <li><a href="team.html">Books</a></li>
               <li><a href="experiance.html">Events</a></li>
               <li><a href="experiance.html">New Releases</a></li>

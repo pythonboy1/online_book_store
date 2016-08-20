@@ -49,12 +49,60 @@ class DemoController < ApplicationController
   end
 
   def shop
+
   end
 
   def single
+
   end
 
   def aboutme
+  end
+
+  def tryit
+    if params[:id] == '1'
+      @book_name = 'Html Language Book'
+      @author_name = 'Jeffery Way'
+      nam = 'Book_html_part_1'
+      @list = ['Book_html_2', nam, nam.succ, nam.succ.succ, nam.succ.succ, nam.succ.succ.succ]
+
+    elsif params[:id] == '2'
+      @book_name = 'Microsoft Office Book'
+      @author_name = 'Peter Weverka'
+      nam = 'Book_office_part_1'
+      @list = ['Book_office_1', nam, nam.succ, nam.succ.succ, nam.succ.succ, nam.succ.succ.succ]
+    elsif params[:id] == '3'
+      @book_name = 'Cryptography Book'
+      @author_name = 'William Stallings'
+      nam = 'Book_cryptography_part_1'
+      @list = ['Book_cryptography_1', nam, nam.succ, nam.succ.succ, nam.succ.succ, nam.succ.succ.succ]
+    elsif params[:id] == '4'
+      @book_name = 'C++ Game Development Book'
+      @author_name = 'Michael Dawson'
+      nam = 'Book_cpp_part_1'
+      @list = ['Book_cpp_1', nam, nam.succ, nam.succ.succ, nam.succ.succ, nam.succ.succ.succ]
+    elsif params[:id] == '5'
+      @book_name = 'Computer Science Book'
+      @author_name = 'College Board'
+      nam = 'Book_cs_part_1'
+      @list = ['Book_cs_1', nam, nam.succ, nam.succ.succ, nam.succ.succ, nam.succ.succ.succ]
+    elsif params[:id] == '6'
+      @book_name = "Oracle Programmer's Book"
+      @author_name = 'Katty & Bert'
+      nam = 'Book_oracle_part_1'
+      @list = ['Book_oracle_1', nam, nam.succ, nam.succ.succ, nam.succ.succ, nam.succ.succ.succ]
+    elsif params[:id] == '7'
+      @book_name = 'Windows Programming Book'
+      @author_name = 'Charles Petzold'
+      nam = 'Book_windows_part_1'
+      @list = ['Book_windows_1', nam, nam.succ, nam.succ.succ, nam.succ.succ, nam.succ.succ.succ]
+    elsif params[:id] == '8'
+      @book_name = 'R Language Book'
+      @author_name = 'John & Braun'
+      nam = 'Book_r_part_1'
+      @list = ['Book_r_1', nam, nam.succ, nam.succ.succ, nam.succ.succ, nam.succ.succ.succ]
+
+    end
   end
 
   private
@@ -64,5 +112,4 @@ class DemoController < ApplicationController
   def access_params
     params.require(:user).permit(:email_id, :password)
   end
-
 end
