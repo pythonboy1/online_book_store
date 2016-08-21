@@ -1,4 +1,14 @@
-
+<%	if session[:error] == '10' %>
+    <div class="alert alert-danger alert-dismissible" role="alert" id="loginwar">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close" id="onwar"><span aria-hidden="true">&times;</span></button>
+      <strong>Warning!</strong> <%= session[:mess] %>
+    </div>
+<% elsif session[:error] == '11' %>
+    <div class="alert alert-danger alert-dismissible" role="alert" id="loginwar">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close" id="onwar"><span aria-hidden="true">&times;</span></button>
+      <strong>Warning!</strong> Password Confirmation Incorrect
+    </div>
+<% end %>
 <div class="main">
   <div class="shop_top">
     <div class="container">

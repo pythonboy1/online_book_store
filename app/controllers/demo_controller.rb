@@ -1,6 +1,5 @@
 class DemoController < ApplicationController
   layout "obs"
-  @username = "Unknown"
   def index
     session[:username] = params[:username]
     p session[:username]
@@ -10,28 +9,46 @@ class DemoController < ApplicationController
   end
 
   def register
-
+    if params[:error] != nil
+      session[:error] = params[:error]
+      session[:mess] = params[:mess]
+    end
   end
+
   def create
-    lastval = User.last
-    if lastval
-      @comp_id = lastval.comp_id
-      @comp_id = @comp_id.succ
+    @error = 00
+    @register = User.new(user_params)
+    if params[:password_confirmation] == ''
+      @error = 10
+      @mess = "Confirm Password Can't be Blank"
+      redirect_to(:action => 'register', :mess => @mess , :error => @error)
+    end
+    @register.password_confirmation == params[:password_confirmation]
+    if !@register.valid?
+      @error = 10
+      @mess = @register.errors.full_messages[0]
+      redirect_to(:action => 'register',:error => @error, :mess => @mess)
     else
-      @comp_id = "OBS0001"
+      lastval = User.last
+      if lastval
+        @comp_id = lastval.comp_id
+        @comp_id = @comp_id.succ
+      else
+        @comp_id = "OBS0001"
+      end
+      if @register.new_record?
+        @register.update_attribute(:comp_id, @comp_id)
+      else
+        print false
+        redirect_to(:action => 'register',:error => @error)
+      end
+      if @register.save
+        redirect_to(:action => 'index',:username => @register.first_name)
+      else
+        render('login')
+      end
     end
 
-    @register = User.new(user_params)
-    if @register.new_record?
-      @register.update_attribute(:comp_id,@comp_id)
-    else
-      print false
-    end
-    if @register.save
-      redirect_to(:action => 'index',:username => @register.first_name)
-    else
-      render('login')
-    end
   end
 
   def access
@@ -107,7 +124,7 @@ class DemoController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:comp_id,:first_name, :last_name, :email_id, :password)
+    params.require(:user).permit(:comp_id,:first_name, :last_name, :email_id, :password, :password_confirmation)
   end
   def access_params
     params.require(:user).permit(:email_id, :password)

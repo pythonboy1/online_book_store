@@ -33,7 +33,7 @@
   </div>
   <div>
     <span>Confirm Password<label>*</label></span>
-    <input type="password">
+    <%= f.text_field(:password_confirmation, :placeholder => "Enter Password Again", :id => "inputPassword",:type => "password") %>
 
   </div>
   <div class="clear"> </div>
