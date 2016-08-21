@@ -1,0 +1,137 @@
+<%= javascript_include_tag 'jquery.magnific-popup', 'data-turbolinks-track' => true %>
+<%= stylesheet_link_tag  'magnific-popup', media: "all" %>
+<script>
+  $(document).ready(function() {
+    $('.popup-with-zoom-anim').magnificPopup({
+      type: 'inline',
+      fixedContentPos: false,
+      fixedBgPos: true,
+      overflowY: 'auto',
+      closeBtnInside: true,
+      preloader: false,
+      midClick: true,
+      removalDelay: 300,
+      mainClass: 'my-mfp-zoom-in'
+    });
+  });
+</script>
+
+<div class="main">
+  <div class="shop_top">
+    <div class="container">
+      <div class="row team_box">
+        <h3 class="m_2">My Favorite Books</h3>
+        <div class="col-md-3 team1">
+          <a class="popup-with-zoom-anim" href="#small-dialog3"><%= image_tag "Book_processing_1.jpg", :class => "img-responsive", :title => "Processing Book", :alt => "" %></a>
+          <div id="small-dialog3" class="mfp-hide">
+            <div class="pop_up2">
+              <%= image_tag "Processing_Logo.png", :class => "img-responsive" %>
+              <h2>Processing Language</h2>
+              <p>Processing is a flexible software sketchbook and a language for learning how to code within the context of the visual arts. The project was initiated in 2001 by Casey Reas and Benjamin Fry, both formerly of the Aesthetics and Computation Group at the MIT Media Lab. In 2012, they started the Processing Foundation along with Daniel Shiffman, who joined as a third project lead. </p>
+              <p>One of the aims of Processing is to allow non-programmers to start computer programming aided by visual feedback. The Processing language builds on the Java language, but uses a simplified syntax and a graphics user interface.</p>
+              <p>Processing also allows for users to create their own classes within the PApplet sketch. This allows for complex data types that can include any number of arguments and avoids the limitations of solely using standard data types such as: int (integer), char (character), float (real number), and color (RGB, ARGB, hex).
+              </p>
+            </div>
+          </div>
+          <h4 class="m_5"><a href="https://processing.org/">Processing Language</a></h4>
+          <p class="m_6">Getting Started with Processing <Br> <STRONG>Author : </STRONG><i id="author">Casey & Ben</i></p><br>
+        </div>
+        <div class="col-md-3 team1">
+          <a class="popup-with-zoom-anim" href="#small-dialog4"><%= image_tag "Book_ceh_1.jpg", :class => "img-responsive", :title => "CEH Book", :alt => "" %></a>
+          <div id="small-dialog4" class="mfp-hide">
+            <div class="pop_up2">
+              <%= image_tag "ceh-logo.jpg", :class => "img-responsive" %>
+              <h2>Certified Ethical Hacker</h2>
+              <p>A Certified Ethical Hacker is a skilled professional who understands and knows how to look for weaknesses and vulnerabilities in target systems and uses the same knowledge and tools as a malicious hacker, but in a lawful and legitimate manner to assess the security posture of a target system(s). The CEH credential certifies individuals in the specific network security discipline of Ethical Hacking from a vendor-neutral perspective.</p>
+              <p>The purpose of the CEH credential is to: <br>
+                --->  Establish and govern minimum standards for credentialing professional information security 		specialists in ethical hacking measures.<br>
+                --->  Inform the public that credentialed individuals meet or exceed the minimum standards.<br>
+                --->  Reinforce ethical hacking as a unique and self-regulating profession.</p>
+            </div>
+          </div>
+          <h4 class="m_5"><a href="https://www.eccouncil.org/programs/certified-ethical-hacker-ceh/">Certified Ethical Hacker</a></h4>
+          <p class="m_6">CEH Official Review Book<br> <STRONG>Author : </STRONG><i id="author">Kimberly Graves</i></p><br>
+        </div>
+        <div class="col-md-3 team1">
+          <a class="popup-with-zoom-anim" href="#small-dialog5"><%= image_tag "Book_rails_1.jpg", :class => "img-responsive", :title => "Rails Book", :alt => "" %></a>
+          <div id="small-dialog5" class="mfp-hide">
+            <div class="pop_up2">
+              <%= image_tag "rails-logo.png", :class => "img-responsive" %>
+              <h2>Ruby on Rails</h2>
+              <p>Ruby on Rails, or simply Rails, is a web application framework written in Ruby under the MIT License. Rails is a model–view–controller (MVC) framework, providing default structures for a database, a web service, and web pages. It encourages and facilitates the use of web standards such as JSON or XML for data transfer, and HTML, CSS and JavaScript for display and user interfacing.</p>
+              <p>Ruby on Rails is separated into various packages, namely ActiveRecord (an object-relational mapping system for database access), Active Resource (provides web services), Action Pack, Active Support and Action Mailer. Ruby on Rails is often installed using RubyGems, a package manager which is included with current versions of Ruby.</p>
+            </div>
+          </div>
+          <h4 class="m_5"><a href="http://rubyonrails.org/">Ruby on Rails</a></h4>
+          <p class="m_6">The Rails 4 Way <br><strong>Author : </strong><i id="author">Obie Fernandez</i></p><br>
+        </div>
+        <div class="col-md-3 team1">
+          <a class="popup-with-zoom-anim" href="#small-dialog6"><%= image_tag "Book_unity_1.jpg", :class => "img-responsive", :title => "Unity Book", :alt => "" %></a>
+          <div id="small-dialog6" class="mfp-hide">
+            <div class="pop_up2">
+              <%= image_tag "unity-logo.png", :class => "img-responsive" %>
+              <h2>Unity Game Engine </h2>
+              <p>Unity is a cross-platform game engine developed by Unity Technologies[5] and used to develop video games for PC, consoles, mobile devices and websites. First announced only for OS X, at Apple's Worldwide Developers Conference in 2005, it has since been extended to target 21 platforms. It is the default software development kit (SDK) for the Wii U.</p>
+              <p>With an emphasis on portability, the engine targets the following APIs: Direct3D on Windows and Xbox 360; OpenGL on Mac, Linux, and Windows; OpenGL ES on Android and iOS; and proprietary APIs on video game consoles. Unity allows specification of texture compression and resolution settings for each platform that the game engine supports, and provides support for bump mapping, reflection mapping, parallax mapping, screen space ambient occlusion (SSAO), dynamic shadows using shadow maps, render-to-texture and full-screen post-processing effects.</p>
+            </div>
+          </div>
+          <h4 class="m_5"><a href="https://unity3d.com/">Unity Game Engine</a></h4>
+          <p class="m_6">3D Game Development with Unity<br> <strong>Author : </strong><i id="author">Sue Blackman</i></p><br>
+        </div>
+        <br><br><br>
+        <div class="col-md-3 team1">
+          <a class="popup-with-zoom-anim" href="#small-dialog7"><%= image_tag "Book_python_1.jpg", :class => "img-responsive", :title => "Python Book", :alt => "" %></a>
+          <div id="small-dialog7" class="mfp-hide">
+            <div class="pop_up2">
+              <%= image_tag "Python-logo.png", :class => "img-responsive" %>
+              <h2>Python Language </h2>
+              <p>Python is a widely used high-level, general-purpose, interpreted, dynamic programming language. Its design philosophy emphasizes code readability, and its syntax allows programmers to express concepts in fewer lines of code than possible in languages such as C++ or Java. The language provides constructs intended to enable clear programs on both a small and large scale.</p>
+              <p>Python's development is conducted largely through the Python Enhancement Proposal (PEP) process. The PEP process is the primary mechanism for proposing major new features, for collecting community input on an issue, and for documenting the design decisions that have gone into Python. Outstanding PEPs are reviewed and commented upon by the Python community and by Van Rossum, the Python project's benevolent dictator for life.</p>
+            </div>
+          </div>
+          <h4 class="m_5"><a href="https://www.python.org/">Python Language</a></h4>
+          <p class="m_6">Python & tkinter Programming<br> <strong>Author : </strong><i id="author">John Grayson</i></p>
+        </div>
+        <div class="col-md-3 team1">
+          <a class="popup-with-zoom-anim" href="#small-dialog8"><%= image_tag "Book_c_1.jpg", :class => "img-responsive", :title => "C Language Book", :alt => "" %></a>
+          <div id="small-dialog8" class="mfp-hide">
+            <div class="pop_up2">
+              <%= image_tag "c-logo.png", :class => "img-responsive" %>
+              <h2>C Language </h2>
+              <p>C is a general-purpose, imperative computer programming language, supporting structured programming, lexical variable scope and recursion, while a static type system prevents many unintended operations. By design, C provides constructs that map efficiently to typical machine instructions, and therefore it has found lasting use in applications that had formerly been coded in assembly language, including operating systems, as well as various application software for computers ranging from supercomputers to embedded systems.</p>
+              <p>C is widely used for "system programming", including implementing operating systems and embedded system applications, due to a combination of desirable characteristics such as code portability and efficiency, ability to access specific hardware addresses, ability to pun types to match externally imposed data access requirements, and low run-time demand on system resources.</p>
+            </div>
+          </div>
+          <h4 class="m_5"><a href="http://www.isocpp.org">C Language</a></h4>
+          <p class="m_6">Sudoku Programming With C<br> <strong>Author : </strong><i id="author">Giulio Zambon</i></p>
+        </div>
+        <div class="col-md-3 team1">
+          <a class="popup-with-zoom-anim" href="#small-dialog9"><%= image_tag "Book_wxpy_1.jpg", :class => "img-responsive", :title => "WxPython Book", :alt => "" %></a>
+          <div id="small-dialog9" class="mfp-hide">
+            <div class="pop_up2">
+              <%= image_tag "wxpython-logo.png", :class => "img-responsive" %>
+              <h2>WxPython Framework </h2>
+              <p>wxPython is a wrapper for the cross-platform GUI API (often referred to as a 'toolkit') wxWidgets (which is written in C++) for the Python programming language. It is one of the alternatives to Tkinter, which is bundled with Python. It is implemented as a Python extension module (native code).</p>
+              <p>Project Phoenix, which began in 2010, is an effort to clean up the wxPython implementation and in the process make it compatible with Python 3. This project is a new implementation of wxPython, focused on improving speed, maintainability and extensibility. Just like "Classic" wxPython, it wraps the wxWidgets C++ toolkit and provides access to the user interface portions of the wx API, enabling Python applications to have a graphical user interface on Windows, Mac or Unix systems with a native look and feel and requiring very little, if any, platform-specific code.</p>
+            </div>
+          </div>
+          <h4 class="m_5"><a href="https://wxpython.org/">WxPython Framework</a></h4>
+          <p class="m_6">WxPython in Action <br> <strong>Author : </strong><i id="author">Noel & Robin</i> </p>
+        </div>
+        <div class="col-md-3 team1">
+          <a class="popup-with-zoom-anim" href="#small-dialog10"><%= image_tag "Book_debian_1.jpg", :class => "img-responsive", :title => "Debian Book", :alt => "" %></a>
+          <div id="small-dialog10" class="mfp-hide">
+            <div class="pop_up2">
+              <%= image_tag "debian-logo.png", :class => "img-responsive" %>
+              <h2>Debian Operating System </h2>
+              <p>Debian is a Unix-like computer operating system that is composed entirely of free software, most of which is under the GNU General Public License, and packaged by a group of individuals called the Debian Project. Three main branches are offered: Stable, Testing, and Unstable.</p>
+              <p>Debian has access to online repositories that contain over 50,000 software packages making it one of the largest software compilations. Debian officially contains only free software, but non-free software can be downloaded from the Debian repositories and installed. Debian includes popular free programs such as LibreOffice, Firefox web browser, Evolution mail, K3b disc burner, VLC media player, GIMP image editor, and Evince document viewer. Debian is a popular choice for web servers.</p>
+            </div>
+          </div>
+          <h4 class="m_5"><a href="https://www.debian.org/">Debian Operaing System</a></h4>
+          <p class="m_6">Debian Administrator Book <br><strong>Author : </strong><i id="author">Raphael & Roland</i></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

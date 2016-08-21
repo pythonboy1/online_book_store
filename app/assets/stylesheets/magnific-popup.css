@@ -178,12 +178,68 @@ button::-moz-focus-inner {
    opacity: 0;
 }
 #small-dialog3 {
-	background: #FFF;
+	background: saddlebrown;
 	padding: 10px 15px;
 	text-align: left;
 	max-width:600px;
 	margin: 40px auto;
 	position: relative;
+}
+#small-dialog4 {
+  background: saddlebrown;
+  padding: 10px 15px;
+  text-align: left;
+  max-width:600px;
+  margin: 40px auto;
+  position: relative;
+}
+#small-dialog5 {
+  background: saddlebrown;
+  padding: 10px 15px;
+  text-align: left;
+  max-width:600px;
+  margin: 40px auto;
+  position: relative;
+}
+#small-dialog6 {
+  background: saddlebrown;
+  padding: 10px 15px;
+  text-align: left;
+  max-width:600px;
+  margin: 40px auto;
+  position: relative;
+}
+#small-dialog7 {
+  background: saddlebrown;
+  padding: 10px 15px;
+  text-align: left;
+  max-width:600px;
+  margin: 40px auto;
+  position: relative;
+}
+#small-dialog8 {
+  background: saddlebrown;
+  padding: 10px 15px;
+  text-align: left;
+  max-width:600px;
+  margin: 40px auto;
+  position: relative;
+}
+#small-dialog9 {
+  background: saddlebrown;
+  padding: 10px 15px;
+  text-align: left;
+  max-width:600px;
+  margin: 40px auto;
+  position: relative;
+}
+#small-dialog10 {
+  background: saddlebrown;
+  padding: 10px 15px;
+  text-align: left;
+  max-width:600px;
+  margin: 40px auto;
+  position: relative;
 }
 .pop_up2{
 	padding:20px;
@@ -200,3 +256,18 @@ button::-moz-focus-inner {
 	font-size: 0.85em;
 	margin-bottom:10px;
 }
+/*.pop_up3{
+  padding:20px;
+}
+.pop_up3 h2{
+  padding:10px 0;
+  color: #000;
+  font-size:1em;
+  text-transform: uppercase;
+}
+.pop_up3 p{
+  line-height: 1.8em;
+  color: #999;
+  font-size: 0.85em;
+  margin-bottom:10px;
+}*/

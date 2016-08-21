@@ -70,6 +70,9 @@ class DemoController < ApplicationController
   end
 
   def single
+  end
+
+  def books
 
   end
 
