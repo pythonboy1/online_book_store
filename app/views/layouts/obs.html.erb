@@ -75,9 +75,9 @@
                 <div class="login_buttons">
                   <div class="check_button"><a href="checkout.html">Check out</a></div>
                   <% if session[:username] == nil %>
-                      <div class="login_button"><%= link_to("Login", {:controller => 'demo', :action => 'login'}) %></div>
+                      <div class="login_button"><%= link_to('Login', {:controller => 'demo', :action => 'login'}) %></div>
                   <% else %>
-                      <div class="login_button"><a href="login.html">Logout</a></div>
+                      <div class="login_button"><%= link_to('Logout', {:controller => 'demo', :action => 'logout'}) %></div>
                   <% end %>
                   <div class="clear"></div>
                 </div>

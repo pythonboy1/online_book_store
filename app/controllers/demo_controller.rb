@@ -1,8 +1,9 @@
 class DemoController < ApplicationController
   layout "obs"
+
+  before_action :confirm_login , :except => [:login, :access, :register, :create, :index]
   def index
-    session[:username] = params[:username]
-    p session[:username]
+    @val = params[:val]
   end
 
   def login
@@ -43,6 +44,8 @@ class DemoController < ApplicationController
         redirect_to(:action => 'register',:error => @error)
       end
       if @register.save
+        session[:user_id] = @register.comp_id
+        session[:username] = @register.first_name
         redirect_to(:action => 'index',:username => @register.first_name)
       else
         render('login')
@@ -53,12 +56,21 @@ class DemoController < ApplicationController
 
   def access
     @error = 0
-    @register = User.find_by({:email_id => access_params[:email_id],:password => access_params[:password]})
+    @register = User.find_by(:email_id => access_params[:email_id])
+
     if @register != nil
       @error = 0
-      session[:username] = @register.first_name
-      p session[:username]
-      redirect_to(:action => "index", :username => @register.first_name)
+      authenticate = @register.authenticate(access_params[:password])
+      if authenticate
+        session[:user_id] = authenticate.comp_id
+        session[:username] = authenticate.first_name
+        @val = 0
+        p session[:username]
+        redirect_to(:action => "index", :username => authenticate.first_name, :val => @val)
+      else
+        render('login')
+        @error = 1
+      end
     else
       render('login')
       @error = 1
@@ -77,6 +89,13 @@ class DemoController < ApplicationController
   end
 
   def aboutme
+  end
+
+  def logout
+    session[:user_id] = nil
+    session[:username] = nil
+    flash[:notice] = "Logged Out"
+    redirect_to(:action => 'login')
   end
 
   def tryit
@@ -132,4 +151,6 @@ class DemoController < ApplicationController
   def access_params
     params.require(:user).permit(:email_id, :password)
   end
+
+
 end

@@ -1,8 +1,4 @@
-<% if session[:username] == nil %>
-  <div class="alert alert-success" role="alert" id="success-alert">
-    <strong>Well Done!</strong> <%= session[:username] %> you successfully logged in
-  </div>
-<% else %>
+<% if @val %>
     <div class="alert alert-success" role="alert" id="succ">
       <strong>Well Done!</strong> <%= session[:username] %> you successfully logged in
     </div>

@@ -1530,7 +1530,7 @@ p.price2{
 	z-index: 2;
 }
 .box-info-product .exclusive:before {
-	background: url(img-sprite.png)no-repeat -401px -308px;
+	/*background: url(img-sprite.png)no-repeat -401px -308px;*/
 	position: absolute;
 	top: 0;
 	left: 0;
